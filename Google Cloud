@@ -1,0 +1,37 @@
+<html>
+
+<head><title>Welcome to my excellent blog</title></head>
+
+<body>
+
+<h1>Welcome to my excellent blog</h1>
+
+<?php
+
+$dbserver "CLOUDSQLIP";
+
+Sdbuser "blogdbuser";
+
+Sdbpassword= "DBPASSWORD";
+
+// In a production blog, we would not store the MySQL
+
+// password in the document root. Instead, we would store
+
+// it in a Secret Manger. For more information see
+
+// https://cloud.google.com/sql/docs/postgres/use-secret-manager
+
+try {
+
+$conn new PDO("mysql:host $dbserver; dbname=mysql", $dbuser, $dbpassword);
+
+// set the PDO error mode to exception
+
+Sconn->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE EXCEPTION);
+
+echo "Connected successfully":
+
+} catch (PDOException Se) (
+
+echo "Database connection failed: Se->getMessage();
